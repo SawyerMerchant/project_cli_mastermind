@@ -6,3 +6,4 @@
 Bits of the commit history is missing because we created Mastermind in the warmup repo.
 
 Catherine Kwak
+John Sawyer
