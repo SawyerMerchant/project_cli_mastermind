@@ -1,20 +1,18 @@
 class Mastermind
   #initialize
-  def initialize(player)
-    win_condition = false
-    @current_turn = 1
-    total_turns = 12
-    instructions
-    Codebreaker.new
-    #Secret.new
+  def initialize
+    # win_condition = false
+    # @current_turn = 1
+    # total_turns = 12
 
-  end
+    Render.instructions
 
-  def instructions
-    puts "Welcome to Mastermind!"
-    puts "You have 12 turns to guess the 4 color code."
-    puts "There are 6 possible colors: Red, Green, Blue, Yellow, Purple, Orange."
-    puts "Enter your guesses in the format 'r g b y.'"
+    @secret = Secret.new
+    @secret.create_secret
+
+    @codebreaker = Codebreaker.new
+
+
   end
 
   # play

@@ -8,14 +8,14 @@ class Codebreaker
 
   # get input
   def get_input(input)
-    input = prompt
+    input = ask_for_input
 
     is_valid?(input)
   end
 
   # prompt for input
-  def prompt
-    puts "Please enter guess # #{@current_turn} (ex: 'r g b y'):"
+  def ask_for_input
+    Render.prompt
     gets.strip.split(" ")
   end
 
@@ -24,7 +24,7 @@ class Codebreaker
     if input.all? { |color| Secret::COLORS.include?(color) } && input.length == 4
       true
     else
-      puts "Invalid input, please use the format 'r g b y.'"
+      Render.invalid
       get_input(input)
     end
   end

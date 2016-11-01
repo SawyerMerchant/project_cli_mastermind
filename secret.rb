@@ -4,13 +4,13 @@ class Secret
   #initialize
   def initialize
     #secret
-    secret = []
-    create_secret
   end
 
   # user input for secret
   def create_secret
-    p 4.times { |item| secret[item] = COLORS.sample }
+    @code = []
+    4.times { |item| @code[item] = COLORS.sample }
+    p @code
   end
 
   # confirm correct colors
