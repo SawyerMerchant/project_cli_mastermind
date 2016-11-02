@@ -11,9 +11,20 @@ class Render
     puts "Enter your guesses in the format 'r g b y.'"
   end
 
-  def self.board
+  def self.board(guesses)
     # what it looks like
     # > r g b y
+    output = ""
+    guesses.each_with_index do |guess, index|
+      output += "Turn #{index +1} "
+      guess.each do |color|
+        output += color
+      end
+      Secret.new.check_guess(guess)
+    end
+    puts output
+
+
     # turn 1: r g b y  || exact: 1, close: 2
     # > y g b r
     # turn 1: r g b y  || exact: 1, close: 2

@@ -16,6 +16,7 @@ class Mastermind
   end
 
   # play
+  def play()
     # turn counter that increments
     # unless win_condition
       # execute play
@@ -24,4 +25,6 @@ class Mastermind
     # codebreaker input == secret
   # check_loss
     # number_of_turns == 12
+
+  end
 end

@@ -1,16 +1,13 @@
+require "./secret"
 class Codebreaker
   #initialize
   def initialize
-    input = []
-
-    get_input(input)
   end
 
   # get input
-  def get_input(input)
+  def get_input(input, secret)
     input = ask_for_input
-
-    is_valid?(input)
+    input unless is_valid?(input)
   end
 
   # prompt for input
@@ -29,3 +26,6 @@ class Codebreaker
     end
   end
 end
+
+
+p Codebreaker.new.is_valid?(%w(r r r r))
